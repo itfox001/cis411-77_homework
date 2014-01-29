@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<head>
+	<title>Javascript Calculator</title>
+
+<script type = "text/javascript">
+var displayValue = 0;
+var storedValue = 0;
+var currentOperand;
+
+function numInput(input)
+{
+document.getElementById('display').value += input;
+}
+</script>
+
+<script type = "text/javascript">
+
+function clearInput()
+{
+document.getElementById('display').value = '';
+storedValue=0;
+}
+</script>
+
+<script type = "text/javascript">
+
+function reverseInput()
+{
+document.getElementById('display').value *= -1;
+}
+</script>
+
+<script type = "text/javascript">
+
+function adjustOperand(input)
+{
+currentOperand = input;
+storedValue=document.getElementById('display').value;
+document.getElementById('display').value=0;
+}
+</script>
+
+<script type = "text/javascript">
+function calculation()
+{
+var result;
+storedValue = Number(storedValue);
+displayValue = Number(document.getElementById('display').value);
+if(currentOperand === 'addition')
+{
+result = storedValue + displayValue;
+}
+else if(currentOperand === 'subtraction')
+{
+result = storedValue - displayValue;
+}
+else if(currentOperand === 'multiplication')
+{
+result = storedValue * displayValue;
+}
+else if(currentOperand === 'division')
+{
+if(document.getElementById('display').value)
+{
+result = storedValue/displayValue;
+}
+else alert('invalid! division by 0!');
+}
+else if(currentOperand === 'modulus')
+{
+result = storedValue % displayValue;
+}
+else
+{
+alert('no current operand');
+}
+
+document.getElementById('display').value = result;
+}
+</script>
+</head>
+<body>
+
+<h1>Javascript calculator!</h1>
+
+<form name = "calcForm">
+<table border = "5" class = "calculator">
+	<tr class = "calculator_support">
+		<td>
+		<form>
+		<input type = "text" class = "calculator_support, calcDisplay" id = "display">
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+		<input type = "button" class = "large_button" id = "clear" value = "CE" onclick = "javascript: clearInput();"> <input type = "button" class = "normal_button" id = "negator" value = "+/-" onclick = "javascript: reverseInput();"> <input type = "button" class = "normal_button" id = "modulus" value = "%" onclick = "javascript: adjustOperand(this.id);">
+		<br>
+		<input type = "button" class = "normal_button" id = "seven" value = 7 onclick = "javascript: numInput(this.value);"> <input type = "button" class = "normal_button" id = "eight" value = 8 onclick = "javascript: numInput(this.value);"> <input type = "button" class = "normal_button" id = "nine" value = 9 onclick = "javascript: numInput(this.value);"> <input type = "button" class = "normal_button" id = "division" value = "/" onclick = "javascript: adjustOperand(this.id);">
+		<br>
+		<input type = "button" class = "normal_button" id = "four" value = 4 onclick = "javascript: numInput(this.value);"> <input type = "button" class = "normal_button" id = "five" value = 5 onclick = "javascript: numInput(this.value);"> <input type = "button" class = "normal_button id = "six" value = 6 onclick = "javascript: numInput(this.value);"> <input type = "button" class = "normal_button" id = "multiplication" value = "X" onclick = "javascript: adjustOperand(this.id);">  
+		<br>
+		<input type = "button" class = "normal_button" id = "one" value = 1 onclick = "javascript: numInput(this.value);"> <input type = "button" class = "normal_button" id = "two" value = 2 onclick = "javascript: numInput(this.value);"> <input type = "button" class = "normal_button" id = "three" value = 3 onclick = "javascript: numInput(this.value);"> <input type = "button" class = "normal_button" id = "subtraction" value = "-" onclick = "javascript: adjustOperand(this.id);"> 
+		<br>
+		<input type = "button" class = "normal_button" id = "zero" value = 0 onclick = "javascript: numInput(this.value);"> <input type = "button" class = "normal_button" id = "decimal" value = "." onclick = "javascript: numInput(this.value);"> <input type = "button" class = "normal_button" id = "equals" value = "=" onclick = "javascript: calculation();"> <input type = "button" class = "normal_button" id = "addition" value = "+" onclick = "javascript: adjustOperand(this.id);">
+		</td>	
+	</tr>
+</table>
+
+</form>
+<a href ="FAQ.html">Frequently Asked Questions!</a> <a href = "index.html">Index</a> <a href = "FeedbackForm.html">Feedback?</a>
+</body>
+</html>

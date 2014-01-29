@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Feedback</title>
+
+<script type = "text/javascript">
+function evaluateForm()
+{
+var email=document.getElementById('addressBox').value;
+if(!email)
+{
+alert('Email is blank!');
+}
+else if(email.indexOf('@')===-1 || email.indexOf('.')===-1)
+{
+alert('invalid email address!');
+}
+if(document.getElementById('comments').value === '')
+{
+alert('No comment!');
+}
+}
+</script>
+</head>
+<body>
+<h1>Questions? Comments?</h1>
+
+<form name = "commentArea">
+Email Address: <input type = "text" id = "addressBox"><br>
+Comments:<br>
+<textarea rows="5" cols="40" id = "comments">
+</textarea><br>
+<input type = "submit" value = "Submit" onclick = "javascript: evaluateForm();">
+</form>
+<a href ="FAQ.html">Frequently Asked Questions!</a> <a href = "index.html">Index</a> <a href = "calculator.html">The calculator!</a>
+</body>
+</html>
