@@ -89,6 +89,77 @@
 	height: 1%;
 }
 
+@media print
+{
+	#header
+	{
+		display:none;
+	}
+	
+	#navigation
+	{
+	display:none;	
+	}
+	
+	#footer
+	{
+	display:none;	
+	}
+	
+	#aside
+	{
+	float:none;	
+	display:block;
+	}
+	
+}
+
+@media(max-width:320px)
+{
+	#content
+	{
+	width:100%;	
+	}
+	
+	body
+	{
+	padding:0px;	
+	}
+	
+	img
+	{
+	max-width:100%;	
+	}
+	
+	#header
+	{
+	position:fixed;
+	width:100%;
+	height:30px;
+	top:0px;	
+	}
+	
+	#navigation ul li a
+	{
+	float:none;	
+	}
+	
+	#navigation ul li
+	{
+	display:block;	
+	}
+	
+	#aside
+	{
+	display:none;	
+	}
+	
+	#navigation
+	{
+	margin-top:70px;	
+	}
+}
+
     </style>
     <body>
 
